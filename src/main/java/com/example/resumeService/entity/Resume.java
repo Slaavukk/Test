@@ -1,18 +1,21 @@
-package com.example.resumeService.Entity;
+package com.example.resumeService.entity;
 
 import lombok.Data;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
 import java.util.Date;
 @Data
-@Entity
 @Table(name = "resume")
+@Document(collection = "resume")
 public class Resume {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
-    private Long id;
+    private String id;
+    @Indexed
     private String name;
     private String lastname;
     private Date birthday;

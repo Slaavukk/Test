@@ -1,4 +1,4 @@
-package com.example.resumeService.Controller;
+package com.example.resumeService.dto;
 
 
 import lombok.Data;

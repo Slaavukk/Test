@@ -1,8 +1,7 @@
 package com.example.resumeService.service;
 
-import com.example.resumeService.Controller.MovieInfo;
-import com.example.resumeService.Controller.RegistrationRequest;
-import com.example.resumeService.Controller.TmbdSearchResultsResponse;
+import com.example.resumeService.dto.MovieInfo;
+import com.example.resumeService.dto.TmbdSearchResultsResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 

@@ -1,7 +1,9 @@
-package com.example.resumeService.Controller;
+package com.example.resumeService.controller;
 
 
-import com.example.resumeService.Entity.Resume;
+import com.example.resumeService.dto.RegistrationRequest;
+import com.example.resumeService.dto.ResumeDto;
+import com.example.resumeService.entity.Resume;
 import com.example.resumeService.service.ResumeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,7 +31,7 @@ public class ResumeController {
     }
 
     @GetMapping("/resume/{id}")
-    public Resume findById(@PathVariable Long id) {
+    public Resume findById(@PathVariable String id) {
         return resumeService.findById(id);
 
     }
@@ -41,7 +43,7 @@ public class ResumeController {
     }
 
     @DeleteMapping("/resumeDelete/{id}")
-    public ResponseEntity<Resume> deleteById(@PathVariable Long id) {
+    public ResponseEntity<Resume> deleteById(@PathVariable String id) {
         Resume resume = resumeService.findById(id);
         if (resume == null) {
             return new ResponseEntity<Resume>(HttpStatus.FOUND);

@@ -1,6 +1,5 @@
-package com.example.resumeService.Controller;
+package com.example.resumeService.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.validation.constraints.NotEmpty;
@@ -12,7 +11,7 @@ import java.util.Date;
 public class ResumeDto {
 
     @NotEmpty
-    private Long id;
+    private String id;
 
     @NotEmpty
     private String name;

@@ -1,8 +1,8 @@
 package com.example.resumeService.service;
 
-import com.example.resumeService.Controller.RegistrationRequest;
-import com.example.resumeService.Controller.ResumeDto;
-import com.example.resumeService.Entity.Resume;
+import com.example.resumeService.dto.RegistrationRequest;
+import com.example.resumeService.dto.ResumeDto;
+import com.example.resumeService.entity.Resume;
 import com.example.resumeService.repository.ResumeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,7 +19,7 @@ public class ResumeService {
     @Autowired
     private TmbdIntegrationService tmbdIntegrationService;
 
-    public Resume findById(Long id) {
+    public Resume findById(String id) {
         return resumeRepository.findById(id).get();
     }
 
@@ -41,7 +41,7 @@ public class ResumeService {
         return resumeRepository.save(resume);
     }
 
-    public void deleteById(Long id) {
+    public void deleteById(String id) {
         resumeRepository.deleteById(id);
     }
 
