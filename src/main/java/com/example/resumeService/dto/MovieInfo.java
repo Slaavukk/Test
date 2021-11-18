@@ -22,7 +22,7 @@ public class MovieInfo {
 
     private String backdropPath;
 
-    private long id; //
+    private long id;
 
     private int voteCount;
 

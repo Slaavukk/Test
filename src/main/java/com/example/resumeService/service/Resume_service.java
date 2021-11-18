@@ -10,8 +10,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
-public class ResumeService {
+public class Resume_service {
 
     @Autowired
     private ResumeRepository resumeRepository;
@@ -27,7 +28,7 @@ public class ResumeService {
         return resumeRepository.findAll();
     }
 
-    public  Resume saveResume (RegistrationRequest registrationRequest) {
+    public Resume saveResume(RegistrationRequest registrationRequest) {
         Resume resume = new Resume();
         resume.setName(registrationRequest.getName());
         resume.setLastname(registrationRequest.getLastname());
@@ -45,10 +46,10 @@ public class ResumeService {
         resumeRepository.deleteById(id);
     }
 
-    public ResponseEntity<ResumeDto> updateResume (ResumeDto resumeDto) {
+    public ResponseEntity<ResumeDto> updateResume(ResumeDto resumeDto) {
         Resume existingResume = findById(resumeDto.getId());
-        if(existingResume == null) {
-            return  new ResponseEntity<ResumeDto>(HttpStatus.NOT_FOUND);
+        if (existingResume == null) {
+            return new ResponseEntity<ResumeDto>(HttpStatus.NOT_FOUND);
         }
         existingResume.setName(resumeDto.getName());
         existingResume.setLastname(resumeDto.getLastname());
@@ -58,6 +59,6 @@ public class ResumeService {
         existingResume.setAboutMe(resumeDto.getAboutMe());
         existingResume.setMovieDescription(resumeDto.getMovieDescription());
         resumeRepository.save(existingResume);
-        return new ResponseEntity<ResumeDto>(resumeDto,HttpStatus.OK);
+        return new ResponseEntity<ResumeDto>(resumeDto, HttpStatus.OK);
     }
 }

@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
 import java.util.Date;
+
 @Data
 @Table(name = "resume")
 @Document(collection = "resume")
